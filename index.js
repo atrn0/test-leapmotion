@@ -1,12 +1,10 @@
-const Leap = require("leapjs");
+require("dotenv").config();
 
-// Leap.loop(function (frame) {
-//   console.log(frame.hands.length);
-// });
+const Leap = require("leapjs");
+const { controlLights } = require("./lights");
 
 const controller = new Leap.Controller();
 controller.connect();
-
 controller.on("gesture", onGesture);
 
 let lastTriggerTime = 0;
@@ -17,15 +15,11 @@ function onGesture(gesture, frame) {
     if (lastTriggerTime + 500 < now.getTime()) {
       if (gesture.direction[1] > 0.2) {
         lastTriggerTime = now.getTime();
-        onTriggered(true);
+        controlLights(true);
       } else if (gesture.direction[1] < -0.2) {
         lastTriggerTime = now.getTime();
-        onTriggered(false);
+        controlLights(false);
       }
     }
   }
-}
-
-function onTriggered(makeLightsOn) {
-  console.log(makeLightsOn ? "on" : "off");
 }

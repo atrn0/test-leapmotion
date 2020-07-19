@@ -8,6 +8,8 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "leapjs": "^0.6.4"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "name": "test-leapmotion",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "github.com/atrn0/test-leapmotion",
+  "author": "atrn0 <14242642+aratasato@users.noreply.github.com>",
+  "license": "MIT"
+}
